@@ -1,5 +1,3 @@
-Possible optimisations: say a requestor sends RdShared, and Host sends SnpData to the owner (in M state), M responds with RspIFwdM. Now we know the requestor will have the sole copy. But the spec says RdShared can only get GO-S/I/Err back, not GO-E.
-
 
 <h1>Comments for CXL.cache transaction layer specification--clarifications needed</h1>
 
@@ -35,4 +33,6 @@ Possible optimisations: say a requestor sends RdShared, and Host sends SnpData t
 <p>For the snoop-pushes-GO rule and "GO not tailgating snoop" rule in 3.2.5.2, how does an H2D Response qualify as a GO? Does "GO" mean "exclusively GO only", and therefore the "GO_WritePull" combined message does not count as "GO"? We suggest treating such a message as a GO, as it simplifies rules 3.2.5.3 and 3.2.5.4.</p>
 
 <!-- This is a comment and will not be rendered in the output. -->
+Possible optimisations: say a requestor sends RdShared, and Host sends SnpData to the owner (in M state), M responds with RspIFwdM. Now we know the requestor will have the sole copy. But the spec says RdShared can only get GO-S/I/Err back, not GO-E.
 
+<img src="images/RdSharedExclusive.png" alt="RdShared could get GO-E">
